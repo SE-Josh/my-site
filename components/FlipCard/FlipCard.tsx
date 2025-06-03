@@ -1,11 +1,14 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
+import draw from "@/public/draw.jpg";
 
 export default function FlipCard() {
   const [flipped, setFlipped] = useState(false);
 
   return (
-    <div className="w-64 h-40 [perspective:1000px]">
+    // 在 rwd md size 以上將高度設定為 1000px，其他尺寸則為 400px
+    <div className="p-10 w-full h-full md:w-64 md:h-200 [perspective:2000px]">
       <div
         className="relative h-full w-full transition-transform duration-500 [transform-style:preserve-3d]"
         style={{ transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)" }}
@@ -16,20 +19,12 @@ export default function FlipCard() {
           onClick={() => setFlipped(true)}
         >
           {/* User Avatar Icon */}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            className="h-16 w-16"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={1.5}
-              d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.5 20.25v-.75A4.5 4.5 0 019 15h6a4.5 4.5 0 014.5 4.5v.75"
-            />
-          </svg>
+
+          <div className="avatar">
+            <div className="w-24 rounded-full">
+              <Image src={draw} alt={"me-draw"} width={480} height={480} />
+            </div>
+          </div>
           {/* Tap hint */}
           <div className="absolute bottom-2 right-2 flex items-center gap-1 text-sm">
             <span>Tap</span>

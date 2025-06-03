@@ -25,7 +25,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="nord">
-      <body className={`bg-base-300 w-full h-screen p-5 ${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`bg-base-300 ${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         <ThemeController />
         {children}
       </body>

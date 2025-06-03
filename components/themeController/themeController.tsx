@@ -1,6 +1,6 @@
 export default function ThemeController() {
   return (
-    <label className="swap swap-rotate fixed right-5">
+    <label className="swap swap-rotate fixed right-12 top-12 z-50">
       {/* this hidden checkbox controls the state */}
       <input type="checkbox" className="theme-controller" value="halloween" />
 
