@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 
 export default function FlipCard() {
@@ -20,7 +21,10 @@ export default function FlipCard() {
           style={{ transform: "rotateY(180deg)" }}
         >
           <span>Back</span>
-          <button className="btn btn-secondary" onClick={() => setFlipped(false)}>
+          <button
+            className="btn btn-secondary"
+            onClick={() => setFlipped(false)}
+          >
             Flip to Front
           </button>
         </div>
