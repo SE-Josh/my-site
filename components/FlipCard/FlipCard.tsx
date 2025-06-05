@@ -2,8 +2,14 @@
 import { useState } from "react";
 import Image from "next/image";
 import draw from "@/public/draw.jpg";
+import fileIcon from "@/public/file.svg";
+import globeIcon from "@/public/globe.svg";
+import windowIcon from "@/public/window.svg";
 
-export default function FlipCard() {
+interface FlipCardProps {
+  onSelect: (tab: "about" | "projects" | "contact") => void;
+}
+export default function FlipCard({ onSelect }: FlipCardProps) {
   const [flipped, setFlipped] = useState(false);
 
   return (
@@ -15,15 +21,19 @@ export default function FlipCard() {
       >
         {/* Front Side */}
         <div
-          className="absolute inset-0 flex items-center justify-center rounded-box bg-base-200 [backface-visibility:hidden] cursor-pointer"
+          className="absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-box bg-base-200 [backface-visibility:hidden] cursor-pointer"
           onClick={() => setFlipped(true)}
         >
           {/* User Avatar Icon */}
-
           <div className="avatar">
             <div className="w-24 rounded-full">
-              <Image src={draw} alt={"me-draw"} width={480} height={480} />
+              <Image src={draw} alt="me-draw" width={480} height={480} />
             </div>
+          </div>
+          {/* Contact info */}
+          <div className="flex flex-col items-center">
+            <span className="font-bold">SE-Josh</span>
+            <span className="text-sm">josh@example.com</span>
           </div>
           {/* Tap hint */}
           <div className="absolute bottom-2 right-2 flex items-center gap-1 text-sm">
@@ -36,14 +46,30 @@ export default function FlipCard() {
 
         {/* Back Side */}
         <div
-          className="absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-box bg-base-200 [backface-visibility:hidden]"
+          className="absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-box bg-base-200 [backface-visibility:hidden]"
           style={{ transform: "rotateY(180deg)" }}
         >
-          <span>Back</span>
-          <button
-            className="btn btn-secondary"
-            onClick={() => setFlipped(false)}
-          >
+          <div className="flex gap-2">
+            <button
+              className="btn btn-sm btn-circle"
+              onClick={() => onSelect("about")}
+            >
+              <Image src={fileIcon} alt="about" width={24} height={24} />
+            </button>
+            <button
+              className="btn btn-sm btn-circle"
+              onClick={() => onSelect("projects")}
+            >
+              <Image src={windowIcon} alt="projects" width={24} height={24} />
+            </button>
+            <button
+              className="btn btn-sm btn-circle"
+              onClick={() => onSelect("contact")}
+            >
+              <Image src={globeIcon} alt="contact" width={24} height={24} />
+            </button>
+          </div>
+          <button className="btn btn-secondary" onClick={() => setFlipped(false)}>
             Flip to Front
           </button>
         </div>
