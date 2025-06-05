@@ -14,7 +14,7 @@ export default function FlipCard({ onSelect }: FlipCardProps) {
 
   return (
     // 在 rwd md size 以上將高度設定為 1000px，其他尺寸則為 400px
-    <div className="p-10 w-full h-full md:w-64 md:h-200 [perspective:2000px]">
+    <div className="p-10 w-full h-full md:p-0 md:w-64 md:h-200 [perspective:2000px]">
       <div
         className="relative h-full w-full transition-transform duration-500 [transform-style:preserve-3d]"
         style={{ transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)" }}
