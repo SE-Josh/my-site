@@ -46,31 +46,34 @@ export default function FlipCard({ onSelect }: FlipCardProps) {
 
         {/* Back Side */}
         <div
-          className="absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-box bg-base-200 [backface-visibility:hidden]"
+          className="absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-box bg-base-200 [backface-visibility:hidden] relative"
           style={{ transform: "rotateY(180deg)" }}
         >
-          <div className="flex gap-2">
+          <div className="flex flex-col gap-2">
             <button
-              className="btn btn-sm btn-circle"
+              className="btn btn-sm"
               onClick={() => onSelect("about")}
             >
               <Image src={fileIcon} alt="about" width={24} height={24} />
             </button>
             <button
-              className="btn btn-sm btn-circle"
+              className="btn btn-sm"
               onClick={() => onSelect("projects")}
             >
               <Image src={windowIcon} alt="projects" width={24} height={24} />
             </button>
             <button
-              className="btn btn-sm btn-circle"
+              className="btn btn-sm"
               onClick={() => onSelect("contact")}
             >
               <Image src={globeIcon} alt="contact" width={24} height={24} />
             </button>
           </div>
-          <button className="btn btn-secondary" onClick={() => setFlipped(false)}>
-            Flip to Front
+          <button
+            className="btn btn-secondary absolute bottom-2 right-2"
+            onClick={() => setFlipped(false)}
+          >
+            Flip
           </button>
         </div>
       </div>
