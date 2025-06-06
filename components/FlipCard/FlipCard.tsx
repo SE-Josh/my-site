@@ -49,29 +49,35 @@ export default function FlipCard({ onSelect, activeTab }: FlipCardProps) {
           className="absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-box bg-base-200 [backface-visibility:hidden]"
           style={{ transform: "rotateY(180deg)" }}
         >
-          <div className="flex flex-col gap-2">
-            <button
-              className={`btn btn-sm ${activeTab === "about" ? "btn-primary" : ""}`}
-              onClick={() => onSelect("about")}
-            >
-              <Image src={fileIcon} alt="about" width={24} height={24} />
-              ABOUT ME
-            </button>
-            <button
-              className={`btn btn-sm ${activeTab === "projects" ? "btn-primary" : ""}`}
-              onClick={() => onSelect("projects")}
-            >
-              <Image src={windowIcon} alt="projects" width={24} height={24} />
-              PROJECTS
-            </button>
-            <button
-              className={`btn btn-sm ${activeTab === "contact" ? "btn-primary" : ""}`}
-              onClick={() => onSelect("contact")}
-            >
-              <Image src={globeIcon} alt="contact" width={24} height={24} />
-              CONTACT
-            </button>
-          </div>
+          <ul className="menu rounded-box bg-base-200">
+            <li>
+              <a
+                className={activeTab === "about" ? "menu-active" : undefined}
+                onClick={() => onSelect("about")}
+              >
+                <Image src={fileIcon} alt="about" width={24} height={24} />
+                ABOUT ME
+              </a>
+            </li>
+            <li>
+              <a
+                className={activeTab === "projects" ? "menu-active" : undefined}
+                onClick={() => onSelect("projects")}
+              >
+                <Image src={windowIcon} alt="projects" width={24} height={24} />
+                PROJECTS
+              </a>
+            </li>
+            <li>
+              <a
+                className={activeTab === "contact" ? "menu-active" : undefined}
+                onClick={() => onSelect("contact")}
+              >
+                <Image src={globeIcon} alt="contact" width={24} height={24} />
+                CONTACT
+              </a>
+            </li>
+          </ul>
           <button
             className="btn btn-secondary absolute bottom-2 right-2"
             onClick={() => setFlipped(false)}
