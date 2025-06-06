@@ -11,9 +11,9 @@ export default function Content({ activeTab }: ContentProps) {
   return (
     <div className="w-full md:w-150 h-80 md:h-140 rounded-box bg-base-200 p-4 flex items-center justify-center">
       {activeTab === "about" && (
-        <section className="relative flex flex-col items-start text-left group gap-2 md:gap-3 w-full">
+        <section className="relative flex flex-col items-start text-left group gap-2 md:gap-3 w-full px-18">
           <p className="absolute select-none font-extrabold text-2xl text-base-content/40 mt-10 ml-8 transition-colors duration-500 group-hover:text-base-content">
-            SoftWare Engineer
+            Software Engineer
           </p>
           <div className="font-bold text-2xl transition-all duration-500 group-hover:pl-1 group-hover:text-transparent">
             Hi! this is
@@ -21,8 +21,10 @@ export default function Content({ activeTab }: ContentProps) {
           <p className="self-end text-6xl font-bold mb-4 transition-all duration-500 group-hover:pr-10 group-hover:text-warning">
             Josh<span className="text-warning">.</span>
           </p>
-          <p className="text-sm text-gray-500 transition-transform duration-500 group-hover:scale-105">
-            An enthusiastic software engineer passionate about technological knowledge, enjoys sports and games, and continuously enhances development skills while expanding horizons.
+          <p className="text-sm text-gray-500 transition-transform duration-500 group-hover:scale-110 px-8">
+            An enthusiastic software engineer passionate about technological
+            knowledge, enjoys sports and games, and continuously enhances
+            development skills while expanding horizons.
           </p>
         </section>
       )}
@@ -32,16 +34,28 @@ export default function Content({ activeTab }: ContentProps) {
             <div className="carousel w-full">
               <div id="item1" className="carousel-item w-full flex flex-col">
                 <p>這是第一個專案</p>
-                <img src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp" className="w-full" />
+                <img
+                  src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp"
+                  className="w-full"
+                />
               </div>
               <div id="item2" className="carousel-item w-full">
-                <img src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp" className="w-full" />
+                <img
+                  src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp"
+                  className="w-full"
+                />
               </div>
               <div id="item3" className="carousel-item w-full">
-                <img src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp" className="w-full" />
+                <img
+                  src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp"
+                  className="w-full"
+                />
               </div>
               <div id="item4" className="carousel-item w-full">
-                <img src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp" className="w-full" />
+                <img
+                  src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp"
+                  className="w-full"
+                />
               </div>
             </div>
             <div className="flex w-full justify-center gap-2 py-2">
