@@ -8,8 +8,9 @@ import windowIcon from "@/public/window.svg";
 
 interface FlipCardProps {
   onSelect: (tab: "about" | "projects" | "contact") => void;
+  activeTab: "about" | "projects" | "contact";
 }
-export default function FlipCard({ onSelect }: FlipCardProps) {
+export default function FlipCard({ onSelect, activeTab }: FlipCardProps) {
   const [flipped, setFlipped] = useState(false);
 
   return (
@@ -50,21 +51,21 @@ export default function FlipCard({ onSelect }: FlipCardProps) {
         >
           <div className="flex flex-col gap-2">
             <button
-              className="btn btn-sm"
+              className={`btn btn-sm ${activeTab === "about" ? "btn-primary" : ""}`}
               onClick={() => onSelect("about")}
             >
               <Image src={fileIcon} alt="about" width={24} height={24} />
               ABOUT ME
             </button>
             <button
-              className="btn btn-sm"
+              className={`btn btn-sm ${activeTab === "projects" ? "btn-primary" : ""}`}
               onClick={() => onSelect("projects")}
             >
               <Image src={windowIcon} alt="projects" width={24} height={24} />
               PROJECTS
             </button>
             <button
-              className="btn btn-sm"
+              className={`btn btn-sm ${activeTab === "contact" ? "btn-primary" : ""}`}
               onClick={() => onSelect("contact")}
             >
               <Image src={globeIcon} alt="contact" width={24} height={24} />
