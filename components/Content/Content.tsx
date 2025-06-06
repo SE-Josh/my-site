@@ -3,9 +3,10 @@ import globeIcon from "@/public/globe.svg";
 import certGithub from "@/public/Cert-GitHub.jpg";
 import certAzure from "@/public/Cert-Azure.jpg";
 import certDocker from "@/public/Cert-Docker.jpg";
+import type { Tab } from "@/types";
 
 interface ContentProps {
-  activeTab: "about" | "projects" | "contact";
+  activeTab: Tab;
 }
 
 export default function Content({ activeTab }: ContentProps) {
@@ -224,6 +225,11 @@ export default function Content({ activeTab }: ContentProps) {
             </button>
           </li>
         </ul>
+      )}
+      {activeTab === "skills" && (
+        <section className="flex items-center justify-center w-full h-full">
+          <p className="opacity-50">Skills section coming soon...</p>
+        </section>
       )}
     </div>
   );
