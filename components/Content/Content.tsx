@@ -30,50 +30,30 @@ export default function Content({ activeTab }: ContentProps) {
         </section>
       )}
       {activeTab === "projects" && (
-        <div className="flex flex-col items-center gap-2">
-          <div className="p-5">
-            <div className="carousel w-full">
-              <div id="item1" className="carousel-item w-full flex flex-col">
-                <Image
-                  src={certGithub}
-                  alt="GitHub Certificate"
-                  className="object-contain h-full"
-                />
+        <div className="flex flex-col items-center gap-2 h-full w-full">
+          <div className="relative p-5 w-full h-full">
+            <div className="carousel w-full h-full border-2 border-primary rounded-box flex items-center justify-center">
+              <div id="item1" className="carousel-item w-full flex items-center justify-center">
+                <Image src={certGithub} alt="GitHub Certificate" className="object-contain" />
               </div>
-              <div id="item2" className="carousel-item w-full">
-                <Image
-                  src={certDocker}
-                  alt="Docker Certificate"
-                  className="object-contain h-full"
-                />
+              <div id="item2" className="carousel-item w-full flex items-center justify-center">
+                <Image src={certDocker} alt="Docker Certificate" className="object-contain" />
               </div>
-              <div id="item3" className="carousel-item w-full">
-                <Image
-                  src={certAzure}
-                  alt="Azure Certificate"
-                  className="object-contain h-full"
-                />
+              <div id="item3" className="carousel-item w-full flex items-center justify-center">
+                <Image src={certAzure} alt="Azure Certificate" className="object-contain" />
               </div>
-              <div id="item4" className="carousel-item w-full">
+              <div id="item4" className="carousel-item w-full flex items-center justify-center">
                 <img
                   src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp"
-                  className="object-contain h-full"
+                  className="object-contain"
                 />
               </div>
             </div>
-            <div className="flex w-full justify-center gap-2 py-2">
-              <a href="#item1" className="btn btn-xs">
-                GitHub
-              </a>
-              <a href="#item2" className="btn btn-xs">
-                Docker
-              </a>
-              <a href="#item3" className="btn btn-xs">
-                Azure
-              </a>
-              <a href="#item4" className="btn btn-xs">
-                Ubuntu
-              </a>
+            <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-2">
+              <a href="#item1" className="btn btn-xs">GitHub</a>
+              <a href="#item2" className="btn btn-xs">Docker</a>
+              <a href="#item3" className="btn btn-xs">Azure</a>
+              <a href="#item4" className="btn btn-xs">Ubuntu</a>
             </div>
           </div>
         </div>
