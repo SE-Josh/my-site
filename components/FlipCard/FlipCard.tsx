@@ -33,7 +33,7 @@ const menuItems: { key: Tab; label: string; icon: JSX.Element }[] = [
         fill="none"
         stroke="currentColor"
       >
-        <g clip-path="url(#clip0_53_13510)">
+        <g clipPath="url(#clip0_53_13510)">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
