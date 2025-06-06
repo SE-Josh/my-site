@@ -1,7 +1,6 @@
 import Image from "next/image";
-import fileIcon from "@/public/file.svg";
 import globeIcon from "@/public/globe.svg";
-import windowIcon from "@/public/window.svg";
+import AboutSection from "./AboutSection";
 
 interface ContentProps {
   activeTab: "about" | "projects" | "contact";
@@ -10,12 +9,7 @@ interface ContentProps {
 export default function Content({ activeTab }: ContentProps) {
   return (
     <div className="w-full md:w-150 h-80 md:h-140 rounded-box bg-base-200 p-4 flex items-center justify-center">
-      {activeTab === "about" && (
-        <div className="flex flex-col items-center gap-2">
-          <Image src={fileIcon} alt="about" width={32} height={32} />
-          <p className="text-center">Hello! I am Josh, a software engineer.</p>
-        </div>
-      )}
+      {activeTab === "about" && <AboutSection />}
       {activeTab === "projects" && (
         <div className="flex flex-col items-center gap-2">
           <div className="p-5">
