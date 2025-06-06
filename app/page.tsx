@@ -2,11 +2,12 @@
 import { useState } from "react";
 import FlipCard from "@/components/FlipCard/FlipCard";
 import Content from "@/components/Content/Content";
+import type { Tab } from "@/types";
 
 export default function Home() {
-  const [tab, setTab] = useState<"about" | "projects" | "contact">("about");
+  const [tab, setTab] = useState<Tab>("about");
 
-  const handleSelect = (nextTab: "about" | "projects" | "contact") => {
+  const handleSelect = (nextTab: Tab) => {
     setTab(nextTab);
   };
 

@@ -2,10 +2,94 @@
 import { useState } from "react";
 import Image from "next/image";
 import draw from "@/public/draw.jpg";
+import type { Tab } from "@/types";
+
+const menuItems: { key: Tab; label: string; icon: JSX.Element }[] = [
+  {
+    key: "about",
+    label: "關於我",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-5 w-5"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M5.121 17.804A9 9 0 1112 21v-4a3 3 0 00-6 0v.804z"
+        />
+      </svg>
+    ),
+  },
+  {
+    key: "projects",
+    label: "證照",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-5 w-5"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M12 8l3-3 3 3M6 8l3-3 3 3m0 8l-3 3-3-3m9 0l-3 3-3-3"
+        />
+      </svg>
+    ),
+  },
+  {
+    key: "contact",
+    label: "聯絡資訊",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-5 w-5"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M21 8V7a2 2 0 00-2-2H5a2 2 0 00-2 2v1m18 0l-9 6-9-6m18 0v9a2 2 0 01-2 2H5a2 2 0 01-2-2V8m18 0l-9 6-9-6"
+        />
+      </svg>
+    ),
+  },
+  {
+    key: "skills",
+    label: "技能表",
+    icon: (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-5 w-5"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M13 10V3L4 14h7v7l9-11h-7z"
+        />
+      </svg>
+    ),
+  },
+];
 
 interface FlipCardProps {
-  onSelect: (tab: "about" | "projects" | "contact") => void;
-  activeTab: "about" | "projects" | "contact";
+  onSelect: (tab: Tab) => void;
+  activeTab: Tab;
 }
 export default function FlipCard({ onSelect, activeTab }: FlipCardProps) {
   const [flipped, setFlipped] = useState(false);
@@ -48,72 +132,17 @@ export default function FlipCard({ onSelect, activeTab }: FlipCardProps) {
         >
           {/* PC 呈現 Menu */}
           <ul className="menu rounded-box bg-base-200 gap-5 invisible md:visible">
-            <li>
-              <a
-                className={activeTab === "about" ? "menu-active" : undefined}
-                onClick={() => onSelect("about")}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+            {menuItems.map((item) => (
+              <li key={item.key}>
+                <a
+                  className={activeTab === item.key ? "menu-active" : undefined}
+                  onClick={() => onSelect(item.key)}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                ABOUT ME
-              </a>
-            </li>
-            <li>
-              <a
-                className={activeTab === "projects" ? "menu-active" : undefined}
-                onClick={() => onSelect("projects")}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                PROJECTS
-              </a>
-            </li>
-            <li>
-              <a
-                className={activeTab === "contact" ? "menu-active" : undefined}
-                onClick={() => onSelect("contact")}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                CONTACT
-              </a>
-            </li>
+                  {item.icon}
+                  {item.label}
+                </a>
+              </li>
+            ))}
           </ul>
 
           {/* Mobile 呈現 Dock */}
