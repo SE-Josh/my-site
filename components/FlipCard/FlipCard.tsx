@@ -46,7 +46,7 @@ export default function FlipCard({ onSelect }: FlipCardProps) {
 
         {/* Back Side */}
         <div
-          className="absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-box bg-base-200 [backface-visibility:hidden] relative"
+          className="absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-box bg-base-200 [backface-visibility:hidden]"
           style={{ transform: "rotateY(180deg)" }}
         >
           <div className="flex flex-col gap-2">
@@ -55,18 +55,21 @@ export default function FlipCard({ onSelect }: FlipCardProps) {
               onClick={() => onSelect("about")}
             >
               <Image src={fileIcon} alt="about" width={24} height={24} />
+              ABOUT ME
             </button>
             <button
               className="btn btn-sm"
               onClick={() => onSelect("projects")}
             >
               <Image src={windowIcon} alt="projects" width={24} height={24} />
+              PROJECTS
             </button>
             <button
               className="btn btn-sm"
               onClick={() => onSelect("contact")}
             >
               <Image src={globeIcon} alt="contact" width={24} height={24} />
+              CONTACT
             </button>
           </div>
           <button
