@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { JSX, useState } from "react";
 import Image from "next/image";
 import draw from "@/public/draw.jpg";
 import type { Tab } from "@/types";
@@ -13,15 +13,12 @@ const menuItems: { key: Tab; label: string; icon: JSX.Element }[] = [
         xmlns="http://www.w3.org/2000/svg"
         className="h-5 w-5"
         viewBox="0 0 24 24"
-        fill="none"
+        fill="currentColor"
         stroke="currentColor"
       >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M5.121 17.804A9 9 0 1112 21v-4a3 3 0 00-6 0v.804z"
-        />
+        <path d="M8.25 10.3125C8.25 9.79473 8.66973 9.375 9.1875 9.375H12.1875C12.7053 9.375 13.125 9.79473 13.125 10.3125V18.375C13.125 18.8928 12.7053 19.3125 12.1875 19.3125C11.6697 19.3125 11.25 18.8928 11.25 18.375V11.25H9.1875C8.66973 11.25 8.25 10.8303 8.25 10.3125Z" />
+        <path d="M7.82812 18.5625C7.82812 18.0447 8.24786 17.625 8.76562 17.625H15.2344C15.7521 17.625 16.1719 18.0447 16.1719 18.5625C16.1719 19.0803 15.7521 19.5 15.2344 19.5H8.76562C8.24786 19.5 7.82812 19.0803 7.82812 18.5625Z" />
+        <path d="M12 7.5C11.7033 7.5 11.4133 7.41203 11.1666 7.24721C10.92 7.08238 10.7277 6.84811 10.6142 6.57403C10.5006 6.29994 10.4709 5.99834 10.5288 5.70737C10.5867 5.41639 10.7296 5.14912 10.9393 4.93934C11.1491 4.72956 11.4164 4.5867 11.7074 4.52882C11.9983 4.47094 12.2999 4.50065 12.574 4.61418C12.8481 4.72771 13.0824 4.91997 13.2472 5.16665C13.412 5.41332 13.5 5.70333 13.5 6C13.5 6.39783 13.342 6.77936 13.0607 7.06066C12.7794 7.34197 12.3978 7.5 12 7.5Z" />
       </svg>
     ),
   },
@@ -36,12 +33,44 @@ const menuItems: { key: Tab; label: string; icon: JSX.Element }[] = [
         fill="none"
         stroke="currentColor"
       >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M12 8l3-3 3 3M6 8l3-3 3 3m0 8l-3 3-3-3m9 0l-3 3-3-3"
-        />
+        <g clip-path="url(#clip0_53_13510)">
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M15 18C16.6569 18 18 16.6569 18 15C18 13.3431 16.6569 12 15 12C13.3431 12 12 13.3431 12 15C12 16.6569 13.3431 18 15 18Z"
+          />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M13 17.5V22L15 20.5L17 22V17.5"
+          />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M10 19H5C4.46957 19 3.96086 18.7893 3.58579 18.4142C3.21071 18.0391 3 17.5304 3 17V7C3 5.9 3.9 5 5 5H19C19.5304 5 20.0391 5.21071 20.4142 5.58579C20.7893 5.96086 21 6.46957 21 7V17C20.9996 17.3507 20.9071 17.6952 20.7315 17.9988C20.556 18.3025 20.3037 18.5546 20 18.73"
+          />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M6 9H18"
+          />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M6 12H9"
+          />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M6 15H8"
+          />
+        </g>
       </svg>
     ),
   },
