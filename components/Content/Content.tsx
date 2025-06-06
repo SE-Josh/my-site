@@ -9,7 +9,7 @@ interface ContentProps {
 
 export default function Content({ activeTab }: ContentProps) {
   return (
-    <div className="w-full md:w-96 h-80 md:h-200 rounded-box bg-base-200 p-4 flex items-center justify-center">
+    <div className="w-full md:w-150 h-80 md:h-140 rounded-box bg-base-200 p-4 flex items-center justify-center">
       {activeTab === "about" && (
         <div className="flex flex-col items-center gap-2">
           <Image src={fileIcon} alt="about" width={32} height={32} />

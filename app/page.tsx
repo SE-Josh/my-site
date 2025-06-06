@@ -18,7 +18,7 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full h-screen flex flex-col items-center justify-center gap-6 md:flex-row">
+    <div className="w-full h-screen flex flex-col items-center justify-center gap-6 md:flex-row md:px-3">
       <FlipCard onSelect={handleSelect} />
       <div className="hidden md:block">
         <Content activeTab={tab} />
