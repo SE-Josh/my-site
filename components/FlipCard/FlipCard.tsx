@@ -119,85 +119,15 @@ export default function FlipCard({ onSelect, activeTab }: FlipCardProps) {
           {/* Mobile 呈現 Dock */}
           <div className="dock bg-neutral text-neutral-content rounded-b-box visible md:invisible">
             <button>
-              <svg
-                className="size-[1.2em]"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <g
-                  fill="currentColor"
-                  strokeLinejoin="miter"
-                  strokeLinecap="butt"
-                >
-                  <polyline
-                    points="1 11 12 2 23 11"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-miterlimit="10"
-                    strokeWidth="2"
-                  ></polyline>
-                  <path
-                    d="m5,13v7c0,1.105.895,2,2,2h10c1.105,0,2-.895,2-2v-7"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="square"
-                    stroke-miterlimit="10"
-                    strokeWidth="2"
-                  ></path>
-                  <line
-                    x1="12"
-                    y1="22"
-                    x2="12"
-                    y2="18"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="square"
-                    stroke-miterlimit="10"
-                    strokeWidth="2"
-                  ></line>
-                </g>
-              </svg>
               <span className="dock-label">Home</span>
             </button>
 
             <button className="dock-active">
-              <svg
-                className="size-[1.2em]"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <g
-                  fill="currentColor"
-                  strokeLinejoin="miter"
-                  strokeLinecap="butt"
-                >
-                  <polyline
-                    points="3 14 9 14 9 17 15 17 15 14 21 14"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-miterlimit="10"
-                    strokeWidth="2"
-                  ></polyline>
-                  <rect
-                    x="3"
-                    y="3"
-                    width="18"
-                    height="18"
-                    rx="2"
-                    ry="2"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="square"
-                    stroke-miterlimit="10"
-                    strokeWidth="2"
-                  ></rect>
-                </g>
-              </svg>
               <span className="dock-label">Inbox</span>
             </button>
 
             <button onClick={() => setFlipped(false)}>
-              <svg
+              {/* <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
                 height="20"
@@ -210,7 +140,7 @@ export default function FlipCard({ onSelect, activeTab }: FlipCardProps) {
                   d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"
                 />
                 <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
-              </svg>
+              </svg> */}
               <span className="dock-label">Flip</span>
             </button>
           </div>
