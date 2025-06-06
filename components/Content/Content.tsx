@@ -11,10 +11,20 @@ export default function Content({ activeTab }: ContentProps) {
   return (
     <div className="w-full md:w-150 h-80 md:h-140 rounded-box bg-base-200 p-4 flex items-center justify-center">
       {activeTab === "about" && (
-        <div className="flex flex-col items-center gap-2">
-          <Image src={fileIcon} alt="about" width={32} height={32} />
-          <p className="text-center">Hello! I am Josh, a software engineer.</p>
-        </div>
+        <section className="relative flex flex-col items-start text-left group gap-2 md:gap-3 w-full">
+          <p className="absolute select-none font-extrabold text-2xl text-base-content/40 mt-10 ml-8 transition-colors duration-500 group-hover:text-base-content">
+            SoftWare Engineer
+          </p>
+          <div className="font-bold text-2xl transition-all duration-500 group-hover:pl-1 group-hover:text-transparent">
+            Hi! this is
+          </div>
+          <p className="self-end text-6xl font-bold mb-4 transition-all duration-500 group-hover:pr-10 group-hover:text-warning">
+            Josh<span className="text-warning">.</span>
+          </p>
+          <p className="text-sm text-gray-500 transition-transform duration-500 group-hover:scale-105">
+            An enthusiastic software engineer passionate about technological knowledge, enjoys sports and games, and continuously enhances development skills while expanding horizons.
+          </p>
+        </section>
       )}
       {activeTab === "projects" && (
         <div className="flex flex-col items-center gap-2">
