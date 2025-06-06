@@ -2,9 +2,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import draw from "@/public/draw.jpg";
-import fileIcon from "@/public/file.svg";
-import globeIcon from "@/public/globe.svg";
-import windowIcon from "@/public/window.svg";
 
 interface FlipCardProps {
   onSelect: (tab: "about" | "projects" | "contact") => void;
@@ -49,13 +46,26 @@ export default function FlipCard({ onSelect, activeTab }: FlipCardProps) {
           className="absolute inset-0 flex flex-col items-center justify-center gap-4 rounded-box bg-base-200 [backface-visibility:hidden]"
           style={{ transform: "rotateY(180deg)" }}
         >
-          <ul className="menu rounded-box bg-base-200">
+          <ul className="menu rounded-box bg-base-200 gap-5">
             <li>
               <a
                 className={activeTab === "about" ? "menu-active" : undefined}
                 onClick={() => onSelect("about")}
               >
-                <Image src={fileIcon} alt="about" width={24} height={24} />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
                 ABOUT ME
               </a>
             </li>
@@ -64,7 +74,20 @@ export default function FlipCard({ onSelect, activeTab }: FlipCardProps) {
                 className={activeTab === "projects" ? "menu-active" : undefined}
                 onClick={() => onSelect("projects")}
               >
-                <Image src={windowIcon} alt="projects" width={24} height={24} />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
                 PROJECTS
               </a>
             </li>
@@ -73,7 +96,20 @@ export default function FlipCard({ onSelect, activeTab }: FlipCardProps) {
                 className={activeTab === "contact" ? "menu-active" : undefined}
                 onClick={() => onSelect("contact")}
               >
-                <Image src={globeIcon} alt="contact" width={24} height={24} />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
                 CONTACT
               </a>
             </li>
