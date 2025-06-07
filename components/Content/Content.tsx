@@ -3,7 +3,7 @@ import globeIcon from "@/public/globe.svg";
 import certGithub from "@/public/Cert-GitHub.jpg";
 import certAzure from "@/public/Cert-Azure.jpg";
 import certDocker from "@/public/Cert-Docker.jpg";
-import SkillsMockup from "@/components/SkillsMockup";
+import SkillsMockup from "@/components/SkillsMockup/SkillsMockup";
 import type { Tab } from "@/types";
 
 interface ContentProps {
