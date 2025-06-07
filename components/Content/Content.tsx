@@ -11,9 +11,10 @@ interface ContentProps {
 
 export default function Content({ activeTab }: ContentProps) {
   return (
-    <div className="w-full md:w-150 h-80 md:h-140 rounded-box bg-base-200 p-4 flex items-center justify-center">
-      {activeTab === "about" && (
-        <section className="relative flex flex-col items-start text-left group gap-2 md:gap-3 w-full px-18">
+    <div className="relative w-full md:w-150 h-80 md:h-140 rounded-box bg-base-200 p-4">
+      <section
+        className={`absolute inset-0 flex flex-col items-start text-left group gap-2 md:gap-3 w-full px-18 transition-opacity duration-500 ${activeTab === "about" ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+      >
           <p className="absolute select-none font-extrabold text-2xl text-base-content/40 mt-10 ml-8 transition-colors duration-500 group-hover:text-base-content">
             Software Engineer
           </p>
@@ -29,9 +30,9 @@ export default function Content({ activeTab }: ContentProps) {
             development skills while expanding horizons.
           </p>
         </section>
-      )}
-      {activeTab === "projects" && (
-        <div className="flex flex-col items-center gap-2">
+      <div
+        className={`absolute inset-0 flex flex-col items-center gap-2 transition-opacity duration-500 ${activeTab === "projects" ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+      >
           <div className="p-5">
             <div className="carousel w-full">
               <div id="item1" className="carousel-item w-full flex flex-col">
@@ -78,9 +79,9 @@ export default function Content({ activeTab }: ContentProps) {
             </div>
           </div>
         </div>
-      )}
-      {activeTab === "contact" && (
-        <ul className="list bg-base-200 rounded-box">
+      <ul
+        className={`absolute inset-0 list bg-base-200 rounded-box transition-opacity duration-500 ${activeTab === "contact" ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+      >
           <li className="p-4 pb-2 text-xs opacity-60 tracking-wide">
             歡迎透過以下資訊與我聯繫
           </li>
@@ -225,12 +226,11 @@ export default function Content({ activeTab }: ContentProps) {
             </button>
           </li>
         </ul>
-      )}
-      {activeTab === "skills" && (
-        <section className="flex items-center justify-center w-full h-full">
-          <p className="opacity-50">Skills section coming soon...</p>
-        </section>
-      )}
+      <section
+        className={`absolute inset-0 flex items-center justify-center w-full h-full transition-opacity duration-500 ${activeTab === "skills" ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+      >
+        <p className="opacity-50">Skills section coming soon...</p>
+      </section>
     </div>
   );
 }
