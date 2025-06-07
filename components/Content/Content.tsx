@@ -3,6 +3,7 @@ import globeIcon from "@/public/globe.svg";
 import certGithub from "@/public/Cert-GitHub.jpg";
 import certAzure from "@/public/Cert-Azure.jpg";
 import certDocker from "@/public/Cert-Docker.jpg";
+import SkillsMockup from "@/components/SkillsMockup";
 import type { Tab } from "@/types";
 
 interface ContentProps {
@@ -226,10 +227,11 @@ export default function Content({ activeTab }: ContentProps) {
             </button>
           </li>
         </ul>
+
       <section
         className={`absolute inset-0 flex items-center justify-center w-full h-full transition-opacity duration-500 ${activeTab === "skills" ? "opacity-100" : "opacity-0 pointer-events-none"}`}
       >
-        <p className="opacity-50">Skills section coming soon...</p>
+        <SkillsMockup />
       </section>
     </div>
   );
