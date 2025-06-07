@@ -131,7 +131,7 @@ export default function FlipCard({ onSelect, activeTab }: FlipCardProps) {
       >
         {/* Front Side */}
         <div
-          className="absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-box bg-base-200 [backface-visibility:hidden] cursor-pointer"
+          className="card shadow-xl absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-box bg-base-200 [backface-visibility:hidden] cursor-pointer"
           onClick={() => setFlipped(true)}
         >
           {/* User Avatar Icon */}
@@ -140,10 +140,10 @@ export default function FlipCard({ onSelect, activeTab }: FlipCardProps) {
               <Image src={draw} alt="me-draw" width={480} height={480} />
             </div>
           </div>
-          {/* Contact info */}
+          {/* Profile info */}
           <div className="flex flex-col items-center">
-            <span className="font-bold">SE-Josh</span>
-            <span className="text-sm">josh@example.com</span>
+            <span className="text-xl font-bold">SE-Josh</span>
+            <span className="text-sm text-neutral-500">Software Engineer</span>
           </div>
           {/* Tap hint */}
           <div className="absolute bottom-2 right-2 flex items-center gap-1 text-sm">
