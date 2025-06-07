@@ -131,18 +131,18 @@ export default function FlipCard({ onSelect, activeTab }: FlipCardProps) {
       >
         {/* Front Side */}
         <div
-          className="card shadow-xl absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-box bg-base-200 [backface-visibility:hidden] cursor-pointer"
+          className="card shadow-xl absolute inset-0 flex flex-col items-center justify-center gap-3 rounded-box bg-base-200 [backface-visibility:hidden] cursor-pointer"
           onClick={() => setFlipped(true)}
         >
           {/* User Avatar Icon */}
           <div className="avatar">
-            <div className="w-24 rounded-full">
+            <div className="w-28 rounded-full">
               <Image src={draw} alt="me-draw" width={480} height={480} />
             </div>
           </div>
           {/* Profile info */}
-          <div className="flex flex-col items-center">
-            <span className="text-xl font-bold">SE-Josh</span>
+          <div className="flex flex-col items-center gap-1">
+            <span className="text-xl font-bold">Josh</span>
             <span className="text-sm text-neutral-500">Software Engineer</span>
           </div>
           {/* Tap hint */}
