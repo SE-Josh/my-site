@@ -3,6 +3,7 @@ import globeIcon from "@/public/globe.svg";
 import certGithub from "@/public/Cert-GitHub.jpg";
 import certAzure from "@/public/Cert-Azure.jpg";
 import certDocker from "@/public/Cert-Docker.jpg";
+import SkillsMockup from "@/components/SkillsMockup";
 import type { Tab } from "@/types";
 
 interface ContentProps {
@@ -228,7 +229,7 @@ export default function Content({ activeTab }: ContentProps) {
       )}
       {activeTab === "skills" && (
         <section className="flex items-center justify-center w-full h-full">
-          <p className="opacity-50">Skills section coming soon...</p>
+          <SkillsMockup />
         </section>
       )}
     </div>
