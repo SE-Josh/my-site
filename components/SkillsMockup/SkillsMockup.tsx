@@ -2,7 +2,7 @@ import type { FC } from "react";
 
 const SkillsMockup: FC = () => {
   return (
-    <div className="mockup-code bg-base-100 text-base-content w-full">
+    <div className="mockup-code bg-base-100 text-base-content w-full h-full">
       <pre data-prefix="$">
         <code>{`const skillSet = {`}</code>
       </pre>

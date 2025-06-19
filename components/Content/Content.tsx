@@ -5,12 +5,27 @@ import certAzure from "@/public/Cert-Azure.jpg";
 import certDocker from "@/public/Cert-Docker.jpg";
 import SkillsMockup from "@/components/SkillsMockup/SkillsMockup";
 import type { Tab } from "@/types";
+import github from "@/public/github.png";
+import linkedin from "@/public/linkedin.png";
+import instagram from "@/public/instagram.png";
+import hackmd from "@/public/hackmd.png";
 
 interface ContentProps {
   activeTab: Tab;
 }
 
 export default function Content({ activeTab }: ContentProps) {
+  const contactUrls = {
+    linkedin: "https://www.linkedin.com/in/josh-lin-1518411b8/",
+    github: "https://github.com/SE-Josh",
+    instagram: "https://www.instagram.com/87osh/",
+    hackmd: "https://hackmd.io/@SE-Josh",
+  };
+
+  const openWin = (platform: keyof typeof contactUrls) => {
+    window.open(contactUrls[platform]);
+  };
+
   return (
     <div className="w-full md:w-150 h-80 md:h-140 rounded-box bg-base-200 p-4 flex items-center justify-center">
       {activeTab === "about" && (
@@ -81,27 +96,19 @@ export default function Content({ activeTab }: ContentProps) {
         </div>
       )}
       {activeTab === "contact" && (
-        <ul className="list bg-base-200 rounded-box">
+        <ul className="list bg-base-200 rounded-box w-full">
           <li className="p-4 pb-2 text-xs opacity-60 tracking-wide">
             歡迎透過以下資訊與我聯繫
           </li>
 
           <li className="list-row">
-            <div className="text-4xl font-thin opacity-30 tabular-nums">01</div>
+            <div className="text-4xl font-thin opacity-30 tabular-nums">１</div>
             <div>
-              <svg
-                aria-label="LinkedIn logo"
-                width="40"
-                height="40"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 32 32"
-              >
-                <path
-                  fill="white"
-                  d="M26.111,3H5.889c-1.595,0-2.889,1.293-2.889,2.889V26.111c0,1.595,1.293,2.889,2.889,2.889H26.111c1.595,0,2.889-1.293,2.889-2.889V5.889c0-1.595-1.293-2.889-2.889-2.889ZM10.861,25.389h-3.877V12.87h3.877v12.519Zm-1.957-14.158c-1.267,0-2.293-1.034-2.293-2.31s1.026-2.31,2.293-2.31,2.292,1.034,2.292,2.31-1.026,2.31-2.292,2.31Zm16.485,14.158h-3.858v-6.571c0-1.802-.685-2.809-2.111-2.809-1.551,0-2.362,1.048-2.362,2.809v6.571h-3.718V12.87h3.718v1.686s1.118-2.069,3.775-2.069,4.556,1.621,4.556,4.975v7.926Z"
-                  fillRule="evenodd"
-                ></path>
-              </svg>
+              <Image
+                className="size-10 rounded-box"
+                src={linkedin}
+                alt="linkedin logo"
+              />
             </div>
             <div className="list-col-grow">
               <div>LinkedIn</div>
@@ -109,7 +116,10 @@ export default function Content({ activeTab }: ContentProps) {
                 Josh Lin
               </div>
             </div>
-            <button className="btn btn-square btn-ghost">
+            <button
+              className="btn btn-square btn-ghost"
+              onClick={() => openWin("linkedin")}
+            >
               <svg
                 className="size-[1.2em]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -129,20 +139,24 @@ export default function Content({ activeTab }: ContentProps) {
           </li>
 
           <li className="list-row">
-            <div className="text-4xl font-thin opacity-30 tabular-nums">02</div>
+            <div className="text-4xl font-thin opacity-30 tabular-nums">２</div>
             <div>
-              <img
+              <Image
                 className="size-10 rounded-box"
-                src="https://img.daisyui.com/images/profile/demo/4@94.webp"
+                src={github}
+                alt="github logo"
               />
             </div>
             <div className="list-col-grow">
-              <div>Ellie Beilish</div>
+              <div>GitHub</div>
               <div className="text-xs uppercase font-semibold opacity-60">
-                Bears of a fever
+                SE-Josh
               </div>
             </div>
-            <button className="btn btn-square btn-ghost">
+            <button
+              className="btn btn-square btn-ghost"
+              onClick={() => openWin("github")}
+            >
               <svg
                 className="size-[1.2em]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -162,20 +176,24 @@ export default function Content({ activeTab }: ContentProps) {
           </li>
 
           <li className="list-row">
-            <div className="text-4xl font-thin opacity-30 tabular-nums">03</div>
+            <div className="text-4xl font-thin opacity-30 tabular-nums">３</div>
             <div>
-              <img
+              <Image
                 className="size-10 rounded-box"
-                src="https://img.daisyui.com/images/profile/demo/3@94.webp"
+                src={hackmd}
+                alt="hackmd logo"
               />
             </div>
             <div className="list-col-grow">
-              <div>Sabrino Gardener</div>
+              <div>HackMD</div>
               <div className="text-xs uppercase font-semibold opacity-60">
-                Cappuccino
+                SE-Josh
               </div>
             </div>
-            <button className="btn btn-square btn-ghost">
+            <button
+              className="btn btn-square btn-ghost"
+              onClick={() => openWin("hackmd")}
+            >
               <svg
                 className="size-[1.2em]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -193,21 +211,26 @@ export default function Content({ activeTab }: ContentProps) {
               </svg>
             </button>
           </li>
+
           <li className="list-row">
-            <div className="text-4xl font-thin opacity-30 tabular-nums">03</div>
+            <div className="text-4xl font-thin opacity-30 tabular-nums">４</div>
             <div>
-              <img
+              <Image
                 className="size-10 rounded-box"
-                src="https://img.daisyui.com/images/profile/demo/3@94.webp"
+                src={instagram}
+                alt="instagram logo"
               />
             </div>
             <div className="list-col-grow">
-              <div>Sabrino Gardener</div>
+              <div>Instagram</div>
               <div className="text-xs uppercase font-semibold opacity-60">
-                Cappuccino
+                87osh
               </div>
             </div>
-            <button className="btn btn-square btn-ghost">
+            <button
+              className="btn btn-square btn-ghost"
+              onClick={() => openWin("instagram")}
+            >
               <svg
                 className="size-[1.2em]"
                 xmlns="http://www.w3.org/2000/svg"
