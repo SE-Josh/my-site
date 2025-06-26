@@ -107,7 +107,7 @@ export default function FlipCard({ onSelect, activeTab }: FlipCardProps) {
           <ul className="menu rounded-box bg-base-200 gap-5 invisible md:visible">
             {menuItems.map((item) => (
               <li key={item.key}>
-                <a className={activeTab === item.key ? "menu-active" : undefined} onClick={() => onSelect(item.key)}>
+                <a className={`transition-all duration-300 ease-in-out ${activeTab === item.key ? "menu-active" : ""}`} onClick={() => onSelect(item.key)}>
                   {item.icon}
                   {item.label}
                 </a>
