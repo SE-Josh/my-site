@@ -1,20 +1,28 @@
 export default function AboutTab() {
+  const greeting = "Hi! this is";
+  const shadow = "Software Engineer";
+  const name = "Josh";
+  const dot = ".";
+  const intro =
+    "An enthusiastic software engineer passionate about technological knowledge, enjoys sports and games, and continuously enhances development skills while expanding horizons.";
+
   return (
-    <section className="relative flex flex-col items-start text-left group gap-2 md:gap-3 w-full px-18">
-      <p className="absolute select-none font-extrabold text-2xl text-base-content/40 mt-10 ml-8 transition-colors duration-500 group-hover:text-base-content">
-        Software Engineer
-      </p>
-      <div className="font-bold text-2xl transition-all duration-500 group-hover:pl-1 group-hover:text-transparent">
-        Hi! this is
-      </div>
-      <p className="self-end text-6xl font-bold mb-4 transition-all duration-500 group-hover:pr-10 group-hover:text-warning">
-        Josh<span className="text-warning">.</span>
-      </p>
-      <p className="text-sm text-gray-500 transition-transform duration-500 group-hover:scale-110 px-8">
-        An enthusiastic software engineer passionate about technological
-        knowledge, enjoys sports and games, and continuously enhances
-        development skills while expanding horizons.
-      </p>
-    </section>
+    <main className="flex flex-col items-center justify-center w-full font-mono">
+      <section className="flex flex-col items-start justify-start relative text-left w-full max-w-[375px] group">
+        <div className="select-none font-bold text-3xl leading-[60px] mb-2 transition-all duration-1500 group-hover:pl-[50%] group-hover:text-transparent md:group-hover:pl-[30%]">
+          {greeting}
+        </div>
+        <p className="select-none absolute text-[#29282866] font-extrabold text-3xl leading-[35px] mt-[41px] ml-[30px] transition-colors duration-1000 group-hover:text-primary">
+          {shadow}
+        </p>
+        <p className="select-none text-7xl leading-[60px] font-bold self-end mb-8 transition-all duration-1500 group-hover:pr-[40%] group-hover:text-primary">
+          {name}
+          <span className="text-[#e2b714]">{dot}</span>
+        </p>
+        <p className="text-[15px] text-[#999999] leading-6 font-light text-left mb-0 transition-all duration-1500 group-hover:scale-110">
+          {intro}
+        </p>
+      </section>
+    </main>
   );
 }
