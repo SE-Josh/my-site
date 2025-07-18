@@ -6,6 +6,7 @@ import type { Tab } from "@/types";
 import ContactTab from "@/components/Content/ContactTab";
 import CertificateTab from "@/components/Content/CertificateTab";
 import SkillsTab from "@/components/Content/SkillsTab";
+import AboutTab from "@/components/Content/AboutTab";
 
 const menuItems: {
   key: Tab;
@@ -210,8 +211,11 @@ export default function FlipCard({ onSelect, activeTab }: FlipCardProps) {
 
           {/* Mobile 內容 */}
           <div className="flex flex-col items-start justify-center gap-4 block md:hidden">
+            {activeTab === "about" && <AboutTab />}
             {activeTab === "contact" && <ContactTab />}
-            {activeTab === "certificates" && <CertificateTab />}
+            {activeTab === "certificates" && (
+              <CertificateTab idPrefix="mobile" />
+            )}
             {activeTab === "skills" && <SkillsTab />}
           </div>
 
@@ -230,7 +234,6 @@ export default function FlipCard({ onSelect, activeTab }: FlipCardProps) {
                 </button>
               );
             })}
-
             <button onClick={() => setFlipped(false)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -246,7 +249,7 @@ export default function FlipCard({ onSelect, activeTab }: FlipCardProps) {
                 />
                 <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
               </svg>
-              <span className="dock-label">Back</span>
+              <span className="dock-label my-1">Back</span>
             </button>
           </div>
 

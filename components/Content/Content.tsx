@@ -11,7 +11,7 @@ interface ContentProps {
 export default function Content({ activeTab }: ContentProps) {
   const tabContent = {
     about: <AboutTab />,
-    certificates: <CertificateTab />,
+    certificates: <CertificateTab idPrefix="PC"/>,
     contact: <ContactTab />,
     skills: <SkillsTab />,
   };
