@@ -20,10 +20,7 @@ export default function CertificateTab({ idPrefix }: CertificateTabProps) {
               className="object-contain h-full"
             />
           </div>
-          <div
-            id={`${idPrefix}-item2`}
-            className="carousel-item w-full flex flex-col"
-          >
+          <div id={`${idPrefix}-item2`} className="carousel-item w-full">
             <Image
               src={certGithub}
               alt="GitHub Certificate"
