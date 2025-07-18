@@ -4,10 +4,16 @@ import Image from "next/image";
 import draw from "@/public/draw.jpg";
 import type { Tab } from "@/types";
 
-const menuItems: { key: Tab; label: string; icon: JSX.Element }[] = [
+const menuItems: {
+  key: Tab;
+  label: string;
+  dockLabel: string;
+  icon: JSX.Element;
+}[] = [
   {
     key: "about",
     label: "關於我",
+    dockLabel: "About",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -25,6 +31,7 @@ const menuItems: { key: Tab; label: string; icon: JSX.Element }[] = [
   {
     key: "certificates",
     label: "證照",
+    dockLabel: "Certs",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -77,6 +84,7 @@ const menuItems: { key: Tab; label: string; icon: JSX.Element }[] = [
   {
     key: "contact",
     label: "聯絡資訊",
+    dockLabel: "Contact",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -97,6 +105,7 @@ const menuItems: { key: Tab; label: string; icon: JSX.Element }[] = [
   {
     key: "skills",
     label: "技能表",
+    dockLabel: "Skills",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -198,13 +207,19 @@ export default function FlipCard({ onSelect, activeTab }: FlipCardProps) {
 
           {/* Mobile 呈現 Dock */}
           <div className="dock bg-neutral text-neutral-content rounded-b-box visible md:invisible">
-            <button>
-              <span className="dock-label">Home</span>
-            </button>
-
-            <button className="dock-active">
-              <span className="dock-label">Inbox</span>
-            </button>
+            {menuItems.map((item) => {
+              if (item.key === "skills") return null; // Skip certificates in dock
+              return (
+                <button
+                  className={activeTab === item.key ? "dock-active" : ""}
+                  key={item.key}
+                  onClick={() => onSelect(item.key)}
+                >
+                  {item.icon}
+                  <span className="dock-label my-1">{item.dockLabel}</span>
+                </button>
+              );
+            })}
 
             <button onClick={() => setFlipped(false)}>
               <svg
