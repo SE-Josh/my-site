@@ -2,36 +2,38 @@ import Image from "next/image";
 import certGithub from "@/public/Cert-GitHub.jpg";
 import certAzure from "@/public/Cert-Azure.jpg";
 import certDocker from "@/public/Cert-Docker.jpg";
+import certUbuntu from "@/public/Cert-Ubuntu.jpg";
 
-export default function ProjectsTab() {
+export default function CertificateTab() {
   return (
     <div className="flex flex-col items-center gap-2">
       <div className="p-5">
         <div className="carousel w-full">
-          <div id="item1" className="carousel-item w-full flex flex-col">
-            <Image
-              src={certGithub}
-              alt="GitHub Certificate"
-              className="object-contain h-full"
-            />
-          </div>
-          <div id="item2" className="carousel-item w-full">
-            <Image
-              src={certDocker}
-              alt="Docker Certificate"
-              className="object-contain h-full"
-            />
-          </div>
-          <div id="item3" className="carousel-item w-full">
+          <div id="item1" className="carousel-item w-full">
             <Image
               src={certAzure}
               alt="Azure Certificate"
               className="object-contain h-full"
             />
           </div>
+          <div id="item2" className="carousel-item w-full flex flex-col">
+            <Image
+              src={certGithub}
+              alt="GitHub Certificate"
+              className="object-contain h-full"
+            />
+          </div>
+          <div id="item3" className="carousel-item w-full">
+            <Image
+              src={certDocker}
+              alt="Docker Certificate"
+              className="object-contain h-full"
+            />
+          </div>
           <div id="item4" className="carousel-item w-full">
-            <img
-              src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp"
+            <Image
+              src={certUbuntu}
+              alt="Ubuntu Certificate"
               className="object-contain h-full"
             />
           </div>

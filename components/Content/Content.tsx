@@ -1,6 +1,6 @@
 import type { Tab } from "@/types";
 import AboutTab from "./AboutTab";
-import ProjectsTab from "./ProjectsTab";
+import CertificateTab from "./CertificateTab";
 import ContactTab from "./ContactTab";
 import SkillsTab from "./SkillsTab";
 
@@ -11,7 +11,7 @@ interface ContentProps {
 export default function Content({ activeTab }: ContentProps) {
   const tabContent = {
     about: <AboutTab />,
-    projects: <ProjectsTab />,
+    projects: <CertificateTab />,
     contact: <ContactTab />,
     skills: <SkillsTab />,
   };
