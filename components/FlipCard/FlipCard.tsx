@@ -3,6 +3,9 @@ import { JSX, useState } from "react";
 import Image from "next/image";
 import draw from "@/public/draw.jpg";
 import type { Tab } from "@/types";
+import ContactTab from "@/components/Content/ContactTab";
+import CertificateTab from "@/components/Content/CertificateTab";
+import SkillsTab from "@/components/Content/SkillsTab";
 
 const menuItems: {
   key: Tab;
@@ -189,7 +192,7 @@ export default function FlipCard({ onSelect, activeTab }: FlipCardProps) {
           style={{ transform: "rotateY(180deg)" }}
         >
           {/* PC 呈現 Menu */}
-          <ul className="menu rounded-box bg-base-200 gap-5 invisible md:visible">
+          <ul className="menu rounded-box bg-base-200 gap-5 hidden md:flex">
             {menuItems.map((item) => (
               <li key={item.key}>
                 <a
@@ -205,10 +208,17 @@ export default function FlipCard({ onSelect, activeTab }: FlipCardProps) {
             ))}
           </ul>
 
+          {/* Mobile 內容 */}
+          <div className="flex flex-col items-start justify-center gap-4 block md:hidden">
+            {activeTab === "contact" && <ContactTab />}
+            {activeTab === "certificates" && <CertificateTab />}
+            {activeTab === "skills" && <SkillsTab />}
+          </div>
+
           {/* Mobile 呈現 Dock */}
-          <div className="dock bg-neutral text-neutral-content rounded-b-box visible md:invisible">
+          <div className="dock bg-neutral text-neutral-content rounded-b-box flex md:hidden">
             {menuItems.map((item) => {
-              if (item.key === "skills") return null; // Skip certificates in dock
+              if (item.key === "about") return null; // Hide about in dock
               return (
                 <button
                   className={activeTab === item.key ? "dock-active" : ""}
